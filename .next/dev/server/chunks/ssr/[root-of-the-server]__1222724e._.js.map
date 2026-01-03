@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/vitanovadesigns/Documents/shilosroofing/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <div className=\"\">\n      <main className=\" \">\n        <h1 className=\"text-4xl font-bold\">Welcome Kirk and Kalen</h1>\n      </main>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,+YAAC;QAAI,WAAU;kBACb,cAAA,+YAAC;YAAK,WAAU;sBACd,cAAA,+YAAC;gBAAG,WAAU;0BAAqB;;;;;;;;;;;;;;;;AAI3C"}}]
+}

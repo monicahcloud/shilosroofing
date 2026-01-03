@@ -1,26 +1,161 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: 40 33% 98%; /* #fbfaf9 */
+  --foreground: 30 10% 14%; /* #2a2622 */
+
+  --card: 0 0% 100%; /* #ffffff */
+  --card-foreground: 30 10% 14%; /* #2a2622 */
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 14%;
+
+  --primary: 43 65% 55%; /* #d7ad42 */
+  --primary-foreground: 30 8% 10%; /* #1c1a17 */
+
+  --secondary: 30 4% 20%; /* #363330 */
+  --secondary-foreground: 40 33% 98%; /* #fbfaf9 */
+
+  --muted: 35 15% 92%; /* #eeebe8 */
+  --muted-foreground: 30 10% 40%; /* #70665c */
+
+  --accent: 40 25% 88%; /* #eee6d3 */
+  --accent-foreground: 30 10% 14%; /* #2a2622 */
+
+  --destructive: 0 84% 60%; /* #ef4444 */
+  --destructive-foreground: 210 40% 98%; /* #f8fafc */
+
+  --border: 35 20% 88%; /* #e7e1da */
+  --input: 35 20% 88%;
+  --ring: 43 65% 55%; /* #d7ad42 */
+
+  --radius: 0.5rem;
+}
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-serif;
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--primary));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--primary));
+  }
+
+  .ring-gold {
+    --tw-ring-color: hsl(var(--primary));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem; /* matches header height */
+}
+/* offset for fixed header */
+[id] {
+  scroll-margin-top: 6rem; /* ~96px */
+}
+
+@media (min-width: 768px) {
+  [id] {
+    scroll-margin-top: 7rem; /* header is taller on md */
+  }
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
 }
