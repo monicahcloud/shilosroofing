@@ -106,7 +106,7 @@ const Footer = () => {
           <p className="text-secondary-foreground/50 text-md">
             Designed &amp; Developed by{" "}
             <a
-              href="https://vitanovadesign.cloud"
+              href="https://vitanovadesigns.cloud"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors">
