@@ -21,7 +21,7 @@ const Footer = () => {
                   Shilos
                 </span>
                 <span className="text-secondary-foreground/70 text-xs block -mt-1">
-                  Maintenance & Construction
+                  Roofing & Construction
                 </span>
               </div>
             </Link>
@@ -99,18 +99,18 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-secondary-foreground/10 mt-12 pt-8 text-center space-y-2">
           <p className="text-secondary-foreground/60 text-md">
-            © {currentYear} Shilos Maintenance &amp; Construction. All rights
+            © {currentYear} Shilos Roofing &amp; Construction. All rights
             reserved.
           </p>
 
           <p className="text-secondary-foreground/50 text-md">
             Designed &amp; Developed by{" "}
             <a
-              href="https://vitanovadesign.com"
+              href="https://vitanovadesign.cloud"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors">
-              VitaNova Design
+              VitaNova Designs and Marketing
             </a>
           </p>
         </div>
